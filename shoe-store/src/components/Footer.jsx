@@ -9,9 +9,8 @@ const Footer = () => {
         <div className="md:text-left text-center">
           <h4 className="text-xl font-semibold mb-4 text-red-500">About Us</h4>
           <p className="text-sm text-gray-300 leading-relaxed">
-            ElectroCity is a modern electricity solutions provider based in Nairobi.
-            We deliver reliable power services, smart energy tools, and customer‑first
-            support to keep homes and businesses running efficiently.
+            Cyman Wear is a Nairobi‑born fashion brand delivering premium streetwear,
+            bold designs, and modern apparel crafted for confidence and culture.
           </p>
         </div>
 
@@ -20,9 +19,9 @@ const Footer = () => {
           <h4 className="text-xl font-semibold mb-4 text-red-500">Contact</h4>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>Nairobi, Kenya</li>
-            <li>Email: info@electrocity.com</li>
-            <li>Phone: +254-745-792-950</li>
-            <li>Phone: 0791441814</li>
+            <li>Email: support@cymanwear.com</li>
+            <li>Phone: +254 745 792 950</li>
+            <li>Phone: +254 791 441 814</li>
           </ul>
         </div>
 
@@ -30,13 +29,13 @@ const Footer = () => {
         <div className="md:text-right text-center">
           <h4 className="text-xl font-semibold mb-4 text-red-500">Follow Us</h4>
           <div className="flex justify-center md:justify-end space-x-6">
-            <a href="https://facebook.com/electrocity" target="_blank" rel="noopener noreferrer">
+            <a href="https://facebook.com/cymanwear" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook-f text-red-500 hover:text-white text-xl" />
             </a>
-            <a href="https://instagram.com/electrocity" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/cymanwear" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-instagram text-red-500 hover:text-white text-xl" />
             </a>
-            <a href="https://twitter.com/electrocity" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/cymanwear" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter text-red-500 hover:text-white text-xl" />
             </a>
           </div>
@@ -45,7 +44,7 @@ const Footer = () => {
 
       {/* 🧾 Bottom Line */}
       <div className="mt-12 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} ElectroCity. All rights reserved.
+        © {new Date().getFullYear()} Cyman Wear. All rights reserved.
       </div>
     </footer>
   );

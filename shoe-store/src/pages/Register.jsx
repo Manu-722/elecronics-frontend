@@ -70,7 +70,7 @@ const Register = () => {
       localStorage.setItem('authToken', JSON.stringify({ access: token }));
       localStorage.setItem('lastUsername', displayName);
 
-      toast.success('Registration successful! Please verify your email to activate your ElectroVolt account.');
+      toast.success('Registration successful! Please verify your email to activate your Cyman Wear account.');
       setTimeout(() => navigate('/'), 1000);
     } catch (error) {
       const friendly = {
@@ -85,21 +85,21 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-6">
-      <div className="bg-white border border-red-500 p-8 rounded shadow-md w-full max-w-md text-red-700">
+    <div className="min-h-screen flex items-center justify-center bg-black px-6">
+      <div className="bg-gray-900 p-8 rounded shadow-md w-full max-w-md text-white">
         <h2 className="text-2xl font-bold mb-6 text-center">
-          Create Your ElectroVolt Account
+          Create Your Cyman Wear Account
         </h2>
 
         <form onSubmit={handleRegister}>
           <input
             type="email"
             name="email"
-            placeholder="Enter your email to power up"
+            placeholder="Enter your email to join Cyman Wear"
             value={formData.email}
             onChange={handleChange}
             required
-            className="mb-4 w-full px-4 py-2 border rounded"
+            className="mb-4 w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white placeholder-gray-400 rounded"
           />
 
           <input
@@ -109,7 +109,7 @@ const Register = () => {
             value={formData.password}
             onChange={handleChange}
             required
-            className="mb-4 w-full px-4 py-2 border rounded"
+            className="mb-4 w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white placeholder-gray-400 rounded"
           />
 
           <input
@@ -119,14 +119,16 @@ const Register = () => {
             value={formData.confirmPassword}
             onChange={handleChange}
             required
-            className="mb-6 w-full px-4 py-2 border rounded"
+            className="mb-6 w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white placeholder-gray-400 rounded"
           />
 
           <button
             type="submit"
             disabled={loading}
             className={`w-full py-2 font-semibold rounded transition ${
-              loading ? 'bg-red-300 text-white' : 'bg-red-600 hover:bg-red-700 text-white'
+              loading
+                ? 'bg-gray-500 text-white'
+                : 'bg-blue-500 hover:bg-blue-600 text-white'
             }`}
           >
             {loading ? 'Creating Your Account...' : 'Register'}

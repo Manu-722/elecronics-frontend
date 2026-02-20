@@ -16,8 +16,6 @@ import {
   setUser,
   setToken,
 } from '../redux/authSlice';
-// import { fetchCartFromServer } from '../redux/cartSlice';
-// import { fetchWishlistFromServer } from '../redux/wishlistSlice';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -76,10 +74,7 @@ const Login = () => {
       localStorage.setItem('authToken', JSON.stringify({ access: token }));
       localStorage.setItem('lastUsername', user.displayName || email.split('@')[0]);
 
-    //   dispatch(fetchCartFromServer());
-    //   dispatch(fetchWishlistFromServer());
-
-      toast.success('Login successful!');
+      toast.success('Welcome back to Cyman Wear!');
       const returnTo = new URLSearchParams(location.search).get('returnTo') || '/';
       setTimeout(() => navigate(returnTo), 1000);
     } catch (error) {
@@ -117,10 +112,7 @@ const Login = () => {
       localStorage.setItem('authToken', JSON.stringify({ access: token }));
       localStorage.setItem('lastUsername', displayName);
 
-    //   dispatch(fetchCartFromServer());
-    //   dispatch(fetchWishlistFromServer());
-
-      toast.success('Google sign-in successful!');
+      toast.success('Signed in with Google — welcome to Cyman Wear!');
       setTimeout(() => navigate('/'), 500);
     } catch (error) {
       toast.error(error.message || 'Google sign-in failed.');
@@ -130,26 +122,29 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-6">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center text-blue-700">Sign In</h2>
+    <div className="min-h-screen flex items-center justify-center bg-black px-6">
+      <div className="bg-gray-900 p-8 rounded shadow-md w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-6 text-center text-white">Sign In to Cyman Wear</h2>
+
         <input
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder="Email address"
           value={formData.email}
           onChange={handleChange}
-          className="mb-4 w-full px-4 py-2 border rounded focus:ring-blue-500 focus:outline-none"
+          className="mb-4 w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white placeholder-gray-400 rounded focus:ring-blue-500 focus:outline-none"
         />
+
         <input
           type="password"
           name="password"
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
-          className="mb-4 w-full px-4 py-2 border rounded focus:ring-blue-500 focus:outline-none"
+          className="mb-4 w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white placeholder-gray-400 rounded focus:ring-blue-500 focus:outline-none"
         />
-        <label className="flex items-center mb-4 text-sm text-gray-600">
+
+        <label className="flex items-center mb-4 text-sm text-gray-300">
           <input
             type="checkbox"
             checked={rememberMe}
@@ -158,33 +153,30 @@ const Login = () => {
           />
           Remember Me
         </label>
+
         <button
           onClick={handleEmailLogin}
           disabled={loading}
           className={`w-full py-2 text-white font-semibold rounded transition ${
-            loading ? 'bg-gray-400' : 'bg-black hover:bg-gray-800'
+            loading ? 'bg-gray-500' : 'bg-blue-500 hover:bg-blue-600'
           }`}
         >
           {loading ? 'Signing in...' : 'Login'}
         </button>
+
         <button
           onClick={handleGoogleLogin}
           className="mt-4 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded"
         >
           Sign in with Google
         </button>
-        <p className="mt-6 text-sm text-center text-gray-600">
-          New to Electrocity?{' '}
-          <Link to="/register" className="text-blue-600 hover:underline">
+
+        <p className="mt-6 text-sm text-center text-gray-300">
+          New to Cyman Wear?{' '}
+          <Link to="/register" className="text-blue-500 hover:text-blue-600">
             Create an account
           </Link>
         </p>
-        {/* <p className="mt-2 text-sm text-center text-gray-600">
-          Forgot password?{' '}
-          <Link to="/request-password-reset" className="text-red-600 hover:underline">
-            Reset it here
-          </Link>
-        </p> */}
       </div>
     </div>
   );
