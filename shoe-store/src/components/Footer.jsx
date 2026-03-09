@@ -40,6 +40,9 @@ const Footer = () => {
             <a href="https://twitter.com/cymanwear" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-twitter text-red-500 hover:text-white text-xl" />
             </a>
+             <a href="https://tiktok.com/cymanwear" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-tiktok text-red-500 hover:text-white text-xl" />
+            </a>
           </div>
         </div>
 
